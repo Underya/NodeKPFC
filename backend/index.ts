@@ -1,9 +1,18 @@
-type message = string | null;
+import express from 'express';
+const app = express();
+const port = 3000;
 
-function testTS(str : message) : void{
-    console.log(str);
-}
+app.get('/hello', (req, res) => {
+  res.send('Hello World!');
+});
 
-let variable : message = "ts succes build and start and daemon 2"
+app.use(function(req, res, next){
+    console.log('app.use call!');
+    res.status(404);
+    res.json({Error : `Not found path-'${req.url}' `})
+    next();
+})
 
-testTS(variable);
+app.listen(port, () => {
+  return console.log(`Express is listening at http://localhost:${port}`);
+});
