@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+    <script type="text/babel" src="index.jsx">
+        console.log('Hello')
+        const rootNode = document.getElementById("app");    // элемент для рендеринга приложения React
+        // получаем корневой элемент 
+        const root = ReactDOM.createRoot(rootNode);
+        // рендеринг в корневой элемент
+        root.render(
+            <h1>Hello React</h1>  // элемент, который мы хотим создать
+        );
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+   
+</body>
+</html>
