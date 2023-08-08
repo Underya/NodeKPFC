@@ -1,6 +1,6 @@
 class testTsClass {
     GetMessage() : string{
-        return "testTsClass return string! 3";
+        return "testTsClass return string! 4";
     }
 }
 
