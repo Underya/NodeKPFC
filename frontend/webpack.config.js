@@ -9,13 +9,16 @@ module.exports = {
         filename: "bundle.js"       
     },
     devServer: {
-     historyApiFallback: true,
-     static: {
-      directory: path.join(__dirname, "/"),
+        historyApiFallback: true,
+        static: {
+            directory: path.join(__dirname, "/"),
+        },
+        port: port,
+        open: true
     },
-     port: port,
-     open: true
-   },
+    resolve: {
+        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    },
     module:{
         rules:[   
             {
@@ -23,8 +26,13 @@ module.exports = {
                 exclude: /(node_modules)/,  
                 loader: "babel-loader",   
                 options:{
-                    presets:[ "@babel/preset-react"]    // используемые плагины
+                    presets:[ "@babel/preset-react"]   
                 }
+            },
+            {
+                test: /\.tsx?$/, 
+                exclude: /(node_modules)/,  
+                loader: "ts-loader"
             }
         ]
     }
