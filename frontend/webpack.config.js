@@ -19,6 +19,8 @@ module.exports = {
     resolve: {
         extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
+    externals: ['express'],
+    target: 'node',
     module:{
         rules:[   
             {
